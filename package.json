@@ -1,0 +1,14 @@
+{
+  "name": "language-scicalc",
+  "version": "0.1.0",
+  "description": "SciCalc language support in Atom",
+  "keywords": [
+    "language",
+    "grammar"
+  ],
+  "repository": "https://github.com/silentmatt/language-scicalc",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

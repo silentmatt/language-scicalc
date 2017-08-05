@@ -1,0 +1,11 @@
+'.source.scicalc':
+  'editor':
+    'commentStart': '// '
+    'increaseIndentPattern': '(?x)
+        \\{ [^}"]* $
+      | \\[ [^\\]"]* $
+      | \\( [^)"]* $
+      '
+    'decreaseIndentPattern': '(?x)
+        ^ \\s* (\\s* /[*] .* [*]/ \\s*)* [}\\])]
+      '

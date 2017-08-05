@@ -1,0 +1,189 @@
+'scopeName': 'source.scicalc'
+'name': 'SciCalc'
+'fileTypes': [
+  'scicalc'
+]
+'patterns': [
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.js'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.js'
+    'name': 'string.quoted.double.scicalc'
+    'patterns': [
+      {
+        'include': '#string_escapes'
+      }
+      {
+        'match': '[^"]*[^\\n\\r"\\\\]$'
+        'name': 'invalid.illegal.string.js'
+      }
+    ]
+  }
+  {
+    'captures':
+      '1':
+        'name': 'punctuation.definition.comment.begin.scicalc'
+      '2':
+        'name': 'punctuation.definition.comment.end.scicalc'
+    'match': '(/\\*)(\\*/)'
+    'name': 'comment.block.empty.scicalc'
+  }
+  {
+    'begin': '/\\*'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.begin.scicalc'
+    'end': '\\*/'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.end.scicalc'
+    'name': 'comment.block.scicalc'
+  }
+  {
+    'begin': '//'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.scicalc'
+    'end': '$'
+    'name': 'comment.line.double-slash.scicalc'
+  }
+  {
+    'match': '\\b(function|var|const|delete|if|else|for|while|where|try|catch)\\b'
+    'name': 'keyword.control.scicalc'
+  }
+  {
+    'match': '\\b(true|false|null)\\b'
+    'name': 'constant.language.scicalc'
+  }
+  {
+    'match': '[+-](?:nan|inf)\\.0'
+    'name': 'constant.numeric.scicalc'
+  }
+  {
+    'match': '(#[ei])?(?:\\.\\d+|\\d+\\.?\\d*)(?:[eE][-+]?\\d+)?'
+    'name': 'constant.numeric.decimal.scicalc'
+  }
+  {
+    'match': '(#[ei])?(?:#b(?:\\.[01]+|[01]+\\.?[01]*)(?:[eE][-+]?[01]+)?)'
+    'name': 'constant.numeric.binary.scicalc'
+  }
+  {
+    'match': '(?:#b(#[ei])?(?:\\.[01]+|[01]+\\.?[01]*)(?:[eE][-+]?[01]+)?)'
+    'name': 'constant.numeric.binary.scicalc'
+  }
+  {
+    'match': '(#[ei])?(?:#o(?:\\.[0-7]+|[0-7]+\\.?[0-7]*)(?:[eE][-+]?[0-7]+)?)'
+    'name': 'constant.numeric.octal.scicalc'
+  }
+  {
+    'match': '(?:#o(#[ei])?(?:\\.[0-7]+|[0-7]+\\.?[0-7]*)(?:[eE][-+]?[0-7]+)?)'
+    'name': 'constant.numeric.octal.scicalc'
+  }
+  {
+    'match': '(#[ei])?(?:#x(?:\\.[a-fA-F\\d]+|[a-fA-F\\d]+\\.?[a-fA-F\\d]*))'
+    'name': 'constant.numeric.hex.scicalc'
+  }
+  {
+    'match': '(?:#x(#[ei])?(?:\\.[a-fA-F\\d]+|[a-fA-F\\d]+\\.?[a-fA-F\\d]*))'
+    'name': 'constant.numeric.hex.scicalc'
+  }
+  {
+    'match': ':(?:[-+/*=<>!^|\';]+|(?:[a-zA-Z][a-zA-Z_0-9]*)\\b)'
+    # This is actually a function literal
+    'name': 'variable.other.scicalc'
+  }
+  {
+    'match': '[-+/*=<>!^|\';,]+'
+    'name': 'keyword.operator.scicalc'
+  }
+  {
+    'match': '(?:in|by|and|or|mod|deg|rad)\\b'
+    'name': 'keyword.operator.scicalc'
+  }
+  {
+    # Built-in operator functions
+    'match': '(?:abs|acos|acosh|arg|asin|asinh|atan|atanh|ceil|conj|cos|cosh|cot|coth|csc|csch|csign|dim|floor|imag|inexact|exact|len|ln|log10|not|real|round|sec|sech|sign|sin|sinh|sqrt|tan|tanh)\\b'
+    'name': 'support.function.scicalc'
+  }
+  # Built-in functions
+  {
+    'match': '(?:alert|apply|atan2|augment|bind|bounds|char|charCode|chop|clamp|classify|clone|concat|confirm|deleteNamespace|denominator|det|diagonal|erf|error|every|factor|filter|fold|foldl)\\b'
+    'name': 'support.function.scicalc'
+  }
+  {
+    'match': '(?:foldr|fpart|gamma|gcd|import|interval|ipart|isEven|isInterval|isOdd|isPrime|lcm|list|load|logn|LU|map|max|min|modPow|nCr|notify|nPr|number|numerator)\\b'
+    'name': 'support.function.scicalc'
+  }
+  {
+    'match': '(?:ones|polar|pop|product|prompt|push|random|range|rationalize|ref|reverse|roundTo|rref|seedrandom|shift|sleep|slice|some|sort|sorted|string|sum|tally|time|transpose)\\b'
+    'name': 'support.function.scicalc'
+  }
+  {
+    'match': '(?:unshift|warning|zeros)\\b'
+    'name': 'support.function.scicalc'
+  }
+  # Built-in namespaced functions
+  {
+    'match': 'finance:(?:fv|npv|pmt|pv)\\b'
+    'name': 'support.function.scicalc'
+  }
+  {
+    'match': 'random:(?:bernoulli|exponential|normal|shuffle|uniform)\\b'
+    'name': 'support.function.scicalc'
+  }
+  {
+    'match': 'stats:(?:correlation|correlationp|covariance|covariancep|mean|median|std|stdp|variance|variancep)\\b'
+    'name': 'support.function.scicalc'
+  }
+  {
+    'match': 'string:(?:indexOf|join|lower|replace|split|trim|upper)\\b'
+    'name': 'support.function.scicalc'
+  }
+  {
+    'match': 'system:(?:setAngleMode|getAngleMode|version|assert|type|registerConstant|registerFunction|unregisterConstant|unregisterFunction)\\b'
+    'name': 'support.function.scicalc'
+  }
+  {
+    'match': '@|(?:pi|e|(?:c:(?:N_A|k|e|euler|G|i|inf|NaN|phi|pi|h|c|g|atm|tau)))\\b'
+    'name': 'support.constant.scicalc'
+  }
+  {
+    # Namespaced variables
+    'match': '[a-zA-Z][a-zA-Z_0-9]*:[a-zA-Z][a-zA-Z_0-9]*'
+    'name': 'variable.other.scicalc'
+  }
+  {
+    'match': '[a-zA-Z][a-zA-Z_0-9]*'
+    'name': 'variable.other.scicalc'
+  }
+]
+'repository':
+  'string_escapes':
+    'patterns': [
+      {
+        'match': '\\\\u(?![A-Fa-f0-9]{4}|{[A-Fa-f0-9]+})[^\'"]*'
+        'name': 'invalid.illegal.unicode-escape.js'
+      }
+      {
+        'match': '\\\\u(?:[A-Fa-f0-9]{4}|({)([A-Fa-f0-9]+)(}))'
+        'name': 'constant.character.escape.js'
+        'captures':
+          '1':
+            'name': 'punctuation.definition.unicode-escape.begin.bracket.curly.js'
+          '2':
+            'patterns': [
+              {
+                # Max codepoint: \u{10FFFF}
+                'match': '[A-Fa-f\\d]{7,}|(?!10)[A-Fa-f\\d]{6}'
+                'name': 'invalid.illegal.unicode-escape.js'
+              }
+            ]
+          '3':
+            'name': 'punctuation.definition.unicode-escape.end.bracket.curly.js'
+      }
+    ]

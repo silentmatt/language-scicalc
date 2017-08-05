@@ -1,0 +1,28 @@
+'.source.scicalc':
+  'if':
+    'prefix': 'if'
+    'body': 'if ${1:true} -> (\n\t$2\n)'
+  'if … else':
+    'prefix': 'ife'
+    'body': 'if ${1:true} -> (\n\t$2\n) else (\n\t$3\n)'
+  'else':
+    'prefix': 'else'
+    'body': 'else (\n\t$1\n)'
+  'else if':
+    'prefix': 'elseif'
+    'body': 'else if ${1:true} -> (\n\t$2\n)'
+  'for in':
+    'prefix': 'for'
+    'body': 'for ${1:variable} in (${2:object}) -> (\n\t$3\n)'
+  'Function':
+    'prefix': 'fun'
+    'body': 'var ${1:functionName} = function ($2) {\n\t$0\n}'
+  'Arrow Function':
+    'prefix': 'af'
+    'body': '($1) -> (\n\t$2\n)'
+  'try':
+    'prefix': 'try'
+    'body': 'try (\n\t$1\n) catch (${2:e}) -> (\n\t$3\n)'
+  'while':
+    'prefix': 'while'
+    'body': 'while ${1:true} -> (\n\t$2\n)'
