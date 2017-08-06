@@ -120,7 +120,7 @@
     'name': 'support.function.scicalc'
   }
   {
-    'match': '(?:ones|polar|pop|product|prompt|push|random|range|rationalize|ref|reverse|roundTo|rref|seedrandom|shift|sleep|slice|some|sort|sorted|string|sum|tally|time|transpose)\\b'
+    'match': '(?:ones|polar|pop|product|prompt|push|range|rationalize|ref|reverse|roundTo|rref|seedrandom|shift|sleep|slice|some|sort|sorted|sum|tally|time|transpose)\\b'
     'name': 'support.function.scicalc'
   }
   {
@@ -156,6 +156,10 @@
     # Namespaced variables
     'match': '[a-zA-Z][a-zA-Z_0-9]*:[a-zA-Z][a-zA-Z_0-9]*'
     'name': 'variable.other.scicalc'
+  }
+  { # Built-in functions that are also namespaces
+    'match': '(?:random|string)\\b'
+    'name': 'support.function.scicalc'
   }
   {
     'match': '[a-zA-Z][a-zA-Z_0-9]*'
