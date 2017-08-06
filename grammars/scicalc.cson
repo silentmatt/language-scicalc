@@ -124,7 +124,7 @@
     'name': 'support.function.scicalc'
   }
   {
-    'match': '(?:unshift|warning|zeros)\\b'
+    'match': '(?:unshift|warning|zeros|help)\\b'
     'name': 'support.function.scicalc'
   }
   # Built-in namespaced functions
@@ -145,7 +145,7 @@
     'name': 'support.function.scicalc'
   }
   {
-    'match': 'system:(?:setAngleMode|getAngleMode|version|assert|type|registerConstant|registerFunction|unregisterConstant|unregisterFunction)\\b'
+    'match': 'system:(?:setAngleMode|getAngleMode|version|assert|type|registerConstant|registerFunction|unregisterConstant|unregisterFunction|setHelpText|removeHelpText)\\b'
     'name': 'support.function.scicalc'
   }
   {
