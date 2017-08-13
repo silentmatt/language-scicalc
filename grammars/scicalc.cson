@@ -105,8 +105,8 @@
     'match': '(?:in|by|and|or|mod|deg|rad)\\b'
     'name': 'keyword.operator.scicalc'
   }
+  # Built-in operator functions
   {
-    # Built-in operator functions
     'match': '(?:abs|acos|acosh|arg|asin|asinh|atan|atanh|ceil|conj|cos|cosh|cot|coth|csc|csch|csign|dim|floor|imag|inexact|exact|len|ln|log10|not|real|round|sec|sech|sign|sin|sinh|sqrt|tan|tanh)\\b'
     'name': 'support.function.scicalc'
   }
@@ -120,7 +120,7 @@
     'name': 'support.function.scicalc'
   }
   {
-    'match': '(?:ones|polar|pop|product|prompt|push|range|rationalize|ref|reverse|roundTo|rref|seedrandom|shift|sleep|slice|some|sort|sorted|sum|tally|time|transpose)\\b'
+    'match': '(?:ones|polar|pop|product|prompt|push|range|rationalize|ref|reverse|roundTo|rref|seedrandom|shift|sleep|slice|some|sort|sortInPlace|sum|tally|time|transpose)\\b'
     'name': 'support.function.scicalc'
   }
   {
@@ -148,16 +148,18 @@
     'match': 'system:(?:setAngleMode|getAngleMode|version|assert|type|registerConstant|registerFunction|unregisterConstant|unregisterFunction|setHelpText|removeHelpText)\\b'
     'name': 'support.function.scicalc'
   }
+  # Bulit-in namespaced constants
   {
     'match': '@|(?:pi|e|(?:c:(?:N_A|k|e|euler|G|i|inf|NaN|phi|pi|h|c|g|atm|tau)))\\b'
     'name': 'support.constant.scicalc'
   }
+  # Namespaced variables
   {
-    # Namespaced variables
     'match': '[a-zA-Z][a-zA-Z_0-9]*:[a-zA-Z][a-zA-Z_0-9]*'
     'name': 'variable.other.scicalc'
   }
-  { # Built-in functions that are also namespaces
+  # Built-in functions that are also namespaces
+  {
     'match': '(?:random|string)\\b'
     'name': 'support.function.scicalc'
   }
